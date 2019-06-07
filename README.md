@@ -17,12 +17,12 @@ yarn add react-basic-slider
 Simply import the component and add some children to it
 
 ```
-import Carousel from 'react-basic-carousel';
+import Slider from 'react-basic-slider';
 
 ...
 
 return(
-  <Carousel>
+  <Slider>
      <div style={{ background: "Aquamarine" }}>
        <p>
          Lorem ipsum dolor sit amet consectetur adipisicing elit. In cumque
@@ -46,7 +46,8 @@ return(
            "url('https://images.unsplash.com/photo-1559762705-2123aa9b467f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
        }}
      />
-  </Carousel>
+  </Slider>
+);
 ```
 
 ### Props
