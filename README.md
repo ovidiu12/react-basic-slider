@@ -16,7 +16,7 @@ yarn add react-basic-slider
 Simply import the component and add some children to it
 
 ```
-import Carousel from 'react-basic-carousel';
+import Carousel from 'react-basic-carousel/dist/tslider';
 
 ...
  

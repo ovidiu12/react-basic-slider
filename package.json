@@ -11,7 +11,9 @@
     "type": "git",
     "url": "https://github.com/ovidiu12/react-tslider.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "styled-components": "^4.3.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "prebuild": "rimraf dist",
@@ -40,8 +42,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "rimraf": "^2.6.3",
-    "styled-components": "^4.3.1"
+    "rimraf": "^2.6.3"
   },
   "keywords": [
     "react",
