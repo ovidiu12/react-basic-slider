@@ -42,5 +42,12 @@
     "react-scripts": "3.0.1",
     "rimraf": "^2.6.3",
     "styled-components": "^4.3.1"
-  }
+  },
+  "keywords": [
+    "react",
+    "carousel",
+    "slider",
+    "react-slider",
+    "swipe"
+  ]
 }
