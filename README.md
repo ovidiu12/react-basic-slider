@@ -4,6 +4,8 @@ A basic react slider/carousel component that uses React Hooks and styled-compone
 
 ![alt text](https://i.imgur.com/1GXU0BR.png)
 
+DEMO -> https://lucid-easley-d4aea3.netlify.com/
+
 ### Instalation
 
 ```bash
