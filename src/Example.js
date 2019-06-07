@@ -5,7 +5,7 @@ import TSlider from "./lib/tslider";
 const Example = () => {
   return (
     <div className="container">
-      <TSlider>
+      <TSlider loop>
         <div style={{ background: "Aquamarine" }}>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In cumque
