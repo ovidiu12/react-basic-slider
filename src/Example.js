@@ -1,6 +1,6 @@
 import React from "react";
 import "./example.css";
-import TSlider from "./lib/tslider";
+import TSlider from "./lib";
 
 const Example = () => {
   return (

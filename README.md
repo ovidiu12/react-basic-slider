@@ -1,4 +1,5 @@
 # React Basic Slider
+
 A basic react slider/carousel component that uses React Hooks and styled-components and that has touch support.
 
 ![alt text](https://i.imgur.com/1GXU0BR.png)
@@ -16,10 +17,10 @@ yarn add react-basic-slider
 Simply import the component and add some children to it
 
 ```
-import Carousel from 'react-basic-carousel/dist/tslider';
+import Carousel from 'react-basic-carousel';
 
 ...
- 
+
 return(
   <Carousel>
      <div style={{ background: "Aquamarine" }}>
@@ -50,11 +51,11 @@ return(
 
 ### Props
 
-| property | type | default | purpose |
-| -------- | ------- | ------- | ------- |
-| loop | boolean | true | Let's you go through the carousel again after you reach the last slider and click the next arrow |
-| selected | number | 0 | Slide to display  |
-| showArrows | boolean | true | Displays the next/prev arrows  |
-| showNav | boolean | true | Displays the bottom dotted navigation  |
-| leftArrow | string | not displaying | Change the default left arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag  |
-| rightArrow | string | not displaying | Change the default right arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag  |
+| property   | type    | default        | purpose                                                                                                           |
+| ---------- | ------- | -------------- | ----------------------------------------------------------------------------------------------------------------- |
+| loop       | boolean | true           | Let's you go through the carousel again after you reach the last slider and click the next arrow                  |
+| selected   | number  | 0              | Slide to display                                                                                                  |
+| showArrows | boolean | true           | Displays the next/prev arrows                                                                                     |
+| showNav    | boolean | true           | Displays the bottom dotted navigation                                                                             |
+| leftArrow  | string  | not displaying | Change the default left arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag  |
+| rightArrow | string  | not displaying | Change the default right arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag |
