@@ -62,3 +62,15 @@ return(
 | showNav    | boolean | true           | Displays the bottom dotted navigation                                                                             |
 | leftArrow  | string  | not displaying | Change the default left arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag  |
 | rightArrow | string  | not displaying | Change the default right arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag |
+
+### Note
+
+If you're using Rollupjs and you're getting the following error or similar: 
+
+```
+[!] Error: 'isValidElementType' is not exported by node_modules/react-is/index.js
+https://github.com/rollup/rollup/wiki/Troubleshooting#name-is-not-exported-by-module
+node_modules/styled-components/dist/styled-components.es.js (7:9)
+```
+
+You can fix it following the instruction here: https://github.com/styled-components/styled-components/issues/1654#issuecomment-441151140
