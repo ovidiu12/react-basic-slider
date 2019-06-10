@@ -2,8 +2,18 @@ import _slicedToArray from "@babel/runtime/helpers/esm/slicedToArray";
 import _objectSpread from "@babel/runtime/helpers/esm/objectSpread";
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
-function _templateObject7() {
+function _templateObject8() {
   var data = _taggedTemplateLiteral(["\n  background: none;\n  border: 0;\n  height: 20px;\n  opacity: 0.5;\n  outline: none;\n  position: relative;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n  width: 20px;\n  padding: 0;\n  cursor: pointer;\n  &:after {\n    background: #345;\n    border-radius: 50%;\n    content: \"\";\n    display: block;\n    height: 6px;\n    left: 7px;\n    position: absolute;\n    top: 7px;\n    width: 6px;\n  }\n  ", "\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  -webkit-align-content: center;\n  -ms-flex-line-pack: center;\n  align-content: center;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  margin-top: 10px;\n  -webkit-box-ordinal-group: 3;\n  -webkit-order: 2;\n  -ms-flex-order: 2;\n  order: 2;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -13,7 +23,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  -webkit-align-content: center;\n  -ms-flex-line-pack: center;\n  align-content: center;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  margin-top: 10px;\n  -webkit-box-ordinal-group: 3;\n  -webkit-order: 2;\n  -ms-flex-order: 2;\n  order: 2;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: none;\n  border: none;\n  height: 40px;\n  opacity: 0.5;\n  outline: none;\n  position: absolute;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n  padding: 0px;\n  cursor: pointer;\n  width: ", ";\n  height: auto;\n  top: 0;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n  ", "\n  ", "\n\n  ", "\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -23,7 +33,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  background: none;\n  border: none;\n  height: 40px;\n  opacity: 0.5;\n  outline: none;\n  position: absolute;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n  padding: 0px;\n  cursor: pointer;\n  width: ", ";\n  height: auto;\n  top: 0;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n  ", "\n  ", "\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 0;\n  left: 0;\n  position: absolute;\n  top: ", ";\n  width: 100%;\n  z-index: 1;\n  ", "\n  ", "\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -33,7 +43,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  height: 0;\n  left: 0;\n  position: absolute;\n  top: ", ";\n  width: 100%;\n  z-index: 1;\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  ", "\n  ", "\n\n  & > * {\n    -webkit-flex-basis: 0;\n    -ms-flex-preferred-size: 0;\n    flex-basis: 0;\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1;\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -43,7 +53,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  ", "\n  ", "\n\n  & > * {\n    -webkit-flex-basis: 0;\n    -ms-flex-preferred-size: 0;\n    flex-basis: 0;\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1;\n  }\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -53,7 +63,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  overflow: hidden;\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  touch-action: none;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -63,7 +73,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  overflow: hidden;\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  touch-action: none;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -76,18 +86,21 @@ import React, { useReducer, useEffect, useRef } from "react";
 import styled from "styled-components";
 import ReactDOM from "react-dom";
 var Root = styled.div(_templateObject());
-var SliderInner = styled.div(_templateObject2());
-var Slides = styled.div(_templateObject3(), function (props) {
+var SliderWrapper = styled.div(_templateObject2());
+var SliderInner = styled.div(_templateObject3());
+var Slides = styled.div(_templateObject4(), function (props) {
   return props.hasTransition && "\n    -webkit-transition: -webkit-transform 0.25s;\n    transition: -webkit-transform 0.25s;\n    transition: transform 0.25s;\n    transition: transform 0.25s, -webkit-transform 0.25s;\n  ";
 }, function (props) {
   return "\n    width: ".concat(100 * props.children.length, "%;\n    transform: transformX(").concat(-1 * props.index * (100 / props.children.length), "%);\n  ");
 });
-var ArrowsWrapper = styled.div(_templateObject4(), function (props) {
+var ArrowsWrapper = styled.div(_templateObject5(), function (props) {
   return !props.arrowsWidth ? "calc(50% - 25px)" : "calc(50% - ".concat(props.arrowsWidth, ")");
 }, function (props) {
-  return !props.showNav && "\n    top: calc(50% - 20px);\n  ";
+  return !props.showNav && "\n    top: calc(50% - 20px);\n    ";
+}, function (props) {
+  return props.arrowsPosition === "bottom" && "\n      position: relative;\n      bottom: 15px;\n    ";
 });
-var Arrow = styled.button(_templateObject5(), function (props) {
+var Arrow = styled.button(_templateObject6(), function (props) {
   return props.arrowWidth || "25px";
 }, function (props) {
   return props.direction === "left" && "\n    left: 10px;\n  ";
@@ -96,8 +109,8 @@ var Arrow = styled.button(_templateObject5(), function (props) {
 }, function (props) {
   return props.children === false && "\n    width: 0;\n    height: 0;\n    border-style: solid;\n    ".concat(props.direction === "left" && "\n      border-width: 7.5px 15px 7.5px 0;\n      border-color: transparent #000000 transparent transparent;\n    ", ";\n    ").concat(props.direction === "right" && "\n      border-width: 7.5px 0 7.5px 15px;\n      border-color: transparent transparent transparent #000000;\n    ", ";\n  ");
 });
-var NavWrapper = styled.div(_templateObject6());
-var NavButton = styled.button(_templateObject7(), function (props) {
+var NavWrapper = styled.div(_templateObject7());
+var NavButton = styled.button(_templateObject8(), function (props) {
   return props.isLastIndex && "\n    opacity: 1;\n    &:after{\n      height: 12px;\n      left: 4px;\n      opacity: 1;\n      top: 4px;\n      width: 12px;\n    }\n  ";
 });
 var initialState = {
@@ -277,12 +290,14 @@ var TSlider = function TSlider(props) {
   var renderArrows = function renderArrows() {
     var leftArrow = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
     var rightArrow = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var arrowsPosition = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "center";
     var children = props.children,
         loop = props.loop,
         showNav = props.showNav,
         arrowsWidth = props.arrowsWidth;
     var lastIndex = state.lastIndex;
     return React.createElement(ArrowsWrapper, {
+      arrowsPosition: arrowsPosition,
       arrowsWidth: arrowsWidth,
       showNav: showNav
     }, loop || lastIndex > 0 ? React.createElement(Arrow, {
@@ -310,16 +325,18 @@ var TSlider = function TSlider(props) {
       showArrows = props.showArrows,
       leftArrow = props.leftArrow,
       rightArrow = props.rightArrow,
-      showNav = props.showNav;
+      showNav = props.showNav,
+      arrowsPosition = props.arrowsPosition;
   var index = state.index,
       transition = state.transition;
   var slidesStyles = {
     width: "".concat(100 * children.length, "%"),
     transform: "translateX(".concat(-1 * index * (100 / children.length), "%)")
   };
-  return React.createElement(Root, {
+  return React.createElement(Root, null, React.createElement(SliderWrapper, {
+    className: props.className,
     ref: sliderRef
-  }, showArrows ? renderArrows(leftArrow, rightArrow) : null, showNav ? renderNav() : null, React.createElement(SliderInner, {
+  }, showNav ? renderNav() : null, React.createElement(SliderInner, {
     onTouchStart: function onTouchStart(event) {
       return handleDragStart(event, true);
     },
@@ -333,7 +350,7 @@ var TSlider = function TSlider(props) {
     hasTransition: transition,
     index: index,
     style: slidesStyles
-  }, children)));
+  }, children))), showArrows ? renderArrows(leftArrow, rightArrow, arrowsPosition) : null);
 };
 
 TSlider.defaultProps = {
