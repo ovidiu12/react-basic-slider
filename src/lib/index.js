@@ -390,8 +390,8 @@ const TSlider = props => {
   };
 
   return (
-    <Root>
-      <SliderWrapper className={props.className} ref={sliderRef}>
+    <Root className={props.className}>
+      <SliderWrapper ref={sliderRef}>
         {showNav ? renderNav() : null}
 
         <SliderInner

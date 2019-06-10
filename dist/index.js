@@ -333,8 +333,9 @@ var TSlider = function TSlider(props) {
     width: "".concat(100 * children.length, "%"),
     transform: "translateX(".concat(-1 * index * (100 / children.length), "%)")
   };
-  return React.createElement(Root, null, React.createElement(SliderWrapper, {
-    className: props.className,
+  return React.createElement(Root, {
+    className: props.className
+  }, React.createElement(SliderWrapper, {
     ref: sliderRef
   }, showNav ? renderNav() : null, React.createElement(SliderInner, {
     onTouchStart: function onTouchStart(event) {
