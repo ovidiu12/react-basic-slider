@@ -1,11 +1,18 @@
 import React from "react";
 import "./example.css";
 import TSlider from "./lib/index";
+import styled from "styled-components";
+
+const CustomSlider = styled(TSlider)`
+  button {
+    background: red;
+  }
+`;
 
 const Example = () => {
   return (
     <div className="container">
-      <TSlider loop>
+      <CustomSlider loop>
         <div style={{ background: "Aquamarine" }}>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In cumque
@@ -45,7 +52,7 @@ const Example = () => {
           possimus illum mollitia eos earum voluptatem non aspernatur?
           Consectetur exercitationem eos vitae?
         </div>
-      </TSlider>
+      </CustomSlider>
     </div>
   );
 };

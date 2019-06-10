@@ -363,9 +363,9 @@ const TSlider = props => {
   };
 
   return (
-    <Root ref={sliderRef}>
-      {showArrows ? renderArrows(leftArrow, rightArrow) : null}
+    <Root className={props.className} ref={sliderRef}>
       {showNav ? renderNav() : null}
+      {showArrows ? renderArrows(leftArrow, rightArrow) : null}
 
       <SliderInner
         onTouchStart={event => handleDragStart(event, true)}

@@ -52,6 +52,32 @@ return(
 );
 ```
 
+### Styling
+
+The styling can be done using styled-components or by passing a custom className and style it directly through css.
+
+```
+import Slider from "react-basic-slider";
+
+...
+
+const CustomSlider = styled(Slider)`
+  button{
+    background: red;
+  }
+`;
+
+...
+
+return(
+  <CustomSlider>
+    <div style={{background: 'red'}}>a</div>
+    <div style={{background: 'green'}}>b</div>
+    <div style={{background: 'blue'}}>c</div>
+  </CustomSlider>
+);
+```
+
 ### Props
 
 | property   | type    | default        | purpose                                                                                                           |
@@ -65,7 +91,7 @@ return(
 
 ### Note
 
-If you're using Rollupjs and you're getting the following error or similar: 
+If you're using Rollupjs and you're getting the following error or similar:
 
 ```
 [!] Error: 'isValidElementType' is not exported by node_modules/react-is/index.js
