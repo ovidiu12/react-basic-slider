@@ -3,6 +3,12 @@ import styled from "styled-components";
 import ReactDOM from "react-dom";
 
 const Root = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+`;
+
+const SliderWrapper = styled.div`
   overflow: hidden;
   position: relative;
   display: -webkit-box;
@@ -62,7 +68,13 @@ const ArrowsWrapper = styled.div`
     !props.showNav &&
     `
     top: calc(50% - 20px);
-  `}
+    `}
+  ${props =>
+    props.arrowsPosition === "bottom" &&
+    `
+      position: relative;
+      bottom: 15px;
+    `}
 `;
 
 const Arrow = styled.button`
@@ -326,12 +338,20 @@ const TSlider = props => {
     return <NavWrapper>{nav}</NavWrapper>;
   };
 
-  const renderArrows = (leftArrow = null, rightArrow = null) => {
+  const renderArrows = (
+    leftArrow = null,
+    rightArrow = null,
+    arrowsPosition = "center"
+  ) => {
     const { children, loop, showNav, arrowsWidth } = props;
     const { lastIndex } = state;
 
     return (
-      <ArrowsWrapper arrowsWidth={arrowsWidth} showNav={showNav}>
+      <ArrowsWrapper
+        arrowsPosition={arrowsPosition}
+        arrowsWidth={arrowsWidth}
+        showNav={showNav}
+      >
         {loop || lastIndex > 0 ? (
           <Arrow
             direction="left"
@@ -353,7 +373,14 @@ const TSlider = props => {
       </ArrowsWrapper>
     );
   };
-  const { children, showArrows, leftArrow, rightArrow, showNav } = props;
+  const {
+    children,
+    showArrows,
+    leftArrow,
+    rightArrow,
+    showNav,
+    arrowsPosition
+  } = props;
 
   const { index, transition } = state;
 
@@ -363,19 +390,21 @@ const TSlider = props => {
   };
 
   return (
-    <Root className={props.className} ref={sliderRef}>
-      {showNav ? renderNav() : null}
-      {showArrows ? renderArrows(leftArrow, rightArrow) : null}
+    <Root>
+      <SliderWrapper className={props.className} ref={sliderRef}>
+        {showNav ? renderNav() : null}
 
-      <SliderInner
-        onTouchStart={event => handleDragStart(event, true)}
-        onTouchMove={event => handleDragMove(event, true)}
-        onTouchEnd={() => handleDragEnd(true)}
-      >
-        <Slides hasTransition={transition} index={index} style={slidesStyles}>
-          {children}
-        </Slides>
-      </SliderInner>
+        <SliderInner
+          onTouchStart={event => handleDragStart(event, true)}
+          onTouchMove={event => handleDragMove(event, true)}
+          onTouchEnd={() => handleDragEnd(true)}
+        >
+          <Slides hasTransition={transition} index={index} style={slidesStyles}>
+            {children}
+          </Slides>
+        </SliderInner>
+      </SliderWrapper>
+      {showArrows ? renderArrows(leftArrow, rightArrow, arrowsPosition) : null}
     </Root>
   );
 };

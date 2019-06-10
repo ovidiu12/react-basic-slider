@@ -2,7 +2,10 @@ import React from "react";
 import "./example.css";
 import TSlider from "./lib/index";
 import styled from "styled-components";
+import LeftArrow from "./left-arrow.svg";
+import RightArrow from "./right-arrow.svg";
 
+//styling example using styled-components
 const CustomSlider = styled(TSlider)`
   button {
     background: red;
@@ -12,7 +15,12 @@ const CustomSlider = styled(TSlider)`
 const Example = () => {
   return (
     <div className="container">
-      <CustomSlider loop>
+      <CustomSlider
+        leftArrow={LeftArrow}
+        rightArrow={RightArrow}
+        arrowsPosition="bottom"
+        loop
+      >
         <div style={{ background: "Aquamarine" }}>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In cumque
