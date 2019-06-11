@@ -231,16 +231,24 @@ const sliderReducer = (state, action) => {
 };
 
 const TSlider = props => {
+  const {
+    children,
+    showArrows,
+    leftArrow,
+    rightArrow,
+    showNav,
+    arrowsPosition,
+    customStyles,
+    selected
+  } = props;
   const sliderRef = useRef(null);
   const [state, dispatch] = useReducer(sliderReducer, initialState);
   useEffect(() => {
-    const { selected } = props;
-
     dispatch({
       type: "setInitialState",
-      payload: { index: selected, lastIndex: selected }
+      payload: { index: Number(selected), lastIndex: Number(selected) }
     });
-  }, []);
+  }, [selected]);
 
   const getDragX = (event, isTouch) => {
     return isTouch ? event.touches[0].pageX : event.pageX;
@@ -324,7 +332,6 @@ const TSlider = props => {
   const renderNav = () => {
     const { children, customStyles } = props;
     const { lastIndex } = state;
-
     const nav = children.map((slide, i) => {
       return (
         <NavButton
@@ -356,7 +363,6 @@ const TSlider = props => {
       </NavWrapper>
     );
   };
-
   const renderArrows = (
     leftArrow = null,
     rightArrow = null,
@@ -407,17 +413,7 @@ const TSlider = props => {
       </ArrowsWrapper>
     );
   };
-  const {
-    children,
-    showArrows,
-    leftArrow,
-    rightArrow,
-    showNav,
-    arrowsPosition,
-    customStyles
-  } = props;
   const { index, transition } = state;
-
   const slidesStyles = {
     width: `${100 * children.length}%`,
     transform: `translateX(${-1 * index * (100 / children.length)}%)`

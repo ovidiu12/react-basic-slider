@@ -12,6 +12,7 @@ const Example = () => {
   return (
     <div className="container">
       <CustomSlider
+        selected="1"
         leftArrow={LeftArrow}
         rightArrow={RightArrow}
         arrowsPosition="bottom"
