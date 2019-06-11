@@ -54,7 +54,7 @@ return(
 
 ### Styling
 
-The styling can be done using styled-components, by passing a custom className and style it directly through css or by using the ```customStyles``` prop.
+The styling can be done using styled-components, by passing a custom className and style it directly through css or by using the `customStyles` prop.
 
 #### Example using styled-components
 
@@ -81,6 +81,7 @@ return(
 ```
 
 #### Example using customStyles prop
+
 ```
 import Slider from "react-basic-slider";
 
@@ -112,7 +113,7 @@ const rightArrowStyles = {
 ...
 
 return(
-  <CustomSlider 
+  <Slider
     customStyles={{
       mainContainer: mainContainerStyles,
       slidesContainer: slidesContainerStyles,
@@ -125,7 +126,7 @@ return(
     <div style={{background: 'red'}}>a</div>
     <div style={{background: 'green'}}>b</div>
     <div style={{background: 'blue'}}>c</div>
-  </CustomSlider>
+  </Slider>
 );
 ```
 
@@ -140,7 +141,7 @@ return(
 | leftArrow      | string  | not displaying | Change the default left arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag  |
 | rightArrow     | string  | not displaying | Change the default right arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag |
 | arrowsPosition | string  | center         | Change the default arrow positioning. Can be center or bottom                                                     |
-| customStyles | object  | not applied         | Change the default styling.                                                     |
+| customStyles   | object  | not applied    | Change the default styling.                                                                                       |
 
 ### Note
 
