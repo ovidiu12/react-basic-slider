@@ -163,6 +163,14 @@ var sliderReducer = function sliderReducer(state, action) {
 };
 
 var TSlider = function TSlider(props) {
+  var children = props.children,
+      showArrows = props.showArrows,
+      leftArrow = props.leftArrow,
+      rightArrow = props.rightArrow,
+      showNav = props.showNav,
+      arrowsPosition = props.arrowsPosition,
+      customStyles = props.customStyles,
+      selected = props.selected;
   var sliderRef = useRef(null);
 
   var _useReducer = useReducer(sliderReducer, initialState),
@@ -171,15 +179,19 @@ var TSlider = function TSlider(props) {
       dispatch = _useReducer2[1];
 
   useEffect(function () {
-    var selected = props.selected;
+    if (props.onChange) {
+      props.onChange(state.index);
+    }
+  });
+  useEffect(function () {
     dispatch({
       type: "setInitialState",
       payload: {
-        index: selected,
-        lastIndex: selected
+        index: Number(selected),
+        lastIndex: Number(selected)
       }
     });
-  }, []);
+  }, [selected]);
 
   var getDragX = function getDragX(event, isTouch) {
     return isTouch ? event.touches[0].pageX : event.pageX;
@@ -250,7 +262,8 @@ var TSlider = function TSlider(props) {
 
   var goToSlide = function goToSlide(index, event) {
     var children = props.children,
-        loop = props.loop;
+        loop = props.loop,
+        onChange = props.onChange;
 
     if (event) {
       event.preventDefault();
@@ -329,13 +342,6 @@ var TSlider = function TSlider(props) {
     })) : null);
   };
 
-  var children = props.children,
-      showArrows = props.showArrows,
-      leftArrow = props.leftArrow,
-      rightArrow = props.rightArrow,
-      showNav = props.showNav,
-      arrowsPosition = props.arrowsPosition,
-      customStyles = props.customStyles;
   var index = state.index,
       transition = state.transition;
   var slidesStyles = {
