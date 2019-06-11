@@ -132,16 +132,17 @@ return(
 
 ### Props
 
-| property       | type    | default        | purpose                                                                                                           |
-| -------------- | ------- | -------------- | ----------------------------------------------------------------------------------------------------------------- |
-| loop           | boolean | true           | Let's you go through the carousel again after you reach the last slider and click the next arrow                  |
-| selected       | number  | 0              | Slide to display                                                                                                  |
-| showArrows     | boolean | true           | Displays the next/prev arrows                                                                                     |
-| showNav        | boolean | true           | Displays the bottom dotted navigation                                                                             |
-| leftArrow      | string  | not displaying | Change the default left arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag  |
-| rightArrow     | string  | not displaying | Change the default right arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag |
-| arrowsPosition | string  | center         | Change the default arrow positioning. Can be center or bottom                                                     |
-| customStyles   | object  | not applied    | Change the default styling.                                                                                       |
+| property       | type     | default        | purpose                                                                                                           |
+| -------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------- |
+| loop           | boolean  | true           | Let's you go through the carousel again after you reach the last slider and click the next arrow                  |
+| selected       | number   | 0              | Slide to display                                                                                                  |
+| showArrows     | boolean  | true           | Displays the next/prev arrows                                                                                     |
+| showNav        | boolean  | true           | Displays the bottom dotted navigation                                                                             |
+| leftArrow      | string   | not displaying | Change the default left arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag  |
+| rightArrow     | string   | not displaying | Change the default right arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag |
+| arrowsPosition | string   | center         | Change the default arrow positioning. Can be center or bottom                                                     |
+| customStyles   | object   | not applied    | Change the default styling.                                                                                       |
+| onChange       | function | not applied    | Captures the current selected index.                                                                              |
 
 ### Note
 

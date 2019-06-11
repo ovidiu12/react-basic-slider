@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./example.css";
 import TSlider from "./lib/index";
 import styled from "styled-components";
@@ -9,6 +9,7 @@ import RightArrow from "./right-arrow.svg";
 const CustomSlider = styled(TSlider)``;
 
 const Example = () => {
+  const [currentIndex, setCurrentIndex] = useState(null);
   return (
     <div className="container">
       <CustomSlider
@@ -17,8 +18,13 @@ const Example = () => {
         rightArrow={RightArrow}
         arrowsPosition="bottom"
         loop
+        onChange={index => setCurrentIndex(index)}
       >
-        <div style={{ background: "Aquamarine" }}>
+        <div
+          style={{
+            background: `${currentIndex == 0 ? "red" : "Aquamarine"}`
+          }}
+        >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In cumque
             dicta ut aliquam dolor recusandae, dolore facilis quo. Numquam

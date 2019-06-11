@@ -244,6 +244,11 @@ const TSlider = props => {
   const sliderRef = useRef(null);
   const [state, dispatch] = useReducer(sliderReducer, initialState);
   useEffect(() => {
+    if (props.onChange) {
+      props.onChange(state.index);
+    }
+  });
+  useEffect(() => {
     dispatch({
       type: "setInitialState",
       payload: { index: Number(selected), lastIndex: Number(selected) }
@@ -310,8 +315,7 @@ const TSlider = props => {
   };
 
   const goToSlide = (index, event) => {
-    const { children, loop } = props;
-
+    const { children, loop, onChange } = props;
     if (event) {
       event.preventDefault();
       event.stopPropagation();
