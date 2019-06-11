@@ -98,7 +98,7 @@ var ArrowsWrapper = styled.div(_templateObject5(), function (props) {
 }, function (props) {
   return !props.showNav && "\n    top: calc(50% - 20px);\n    ";
 }, function (props) {
-  return props.arrowsPosition === "bottom" && "\n      position: relative;\n      bottom: 15px;\n    ";
+  return props.arrowsPosition === "bottom" && "\n      position: relative;\n      bottom: 20px;\n    ";
 });
 var Arrow = styled.button(_templateObject6(), function (props) {
   return props.arrowWidth || "25px";
@@ -273,10 +273,12 @@ var TSlider = function TSlider(props) {
   };
 
   var renderNav = function renderNav() {
-    var children = props.children;
+    var children = props.children,
+        customStyles = props.customStyles;
     var lastIndex = state.lastIndex;
     var nav = children.map(function (slide, i) {
       return React.createElement(NavButton, {
+        style: customStyles !== undefined && customStyles.navigationButtons ? _objectSpread({}, customStyles.navigationButtons) : {},
         isLastIndex: i === lastIndex,
         key: i,
         onClick: function onClick(event) {
@@ -284,7 +286,9 @@ var TSlider = function TSlider(props) {
         }
       });
     });
-    return React.createElement(NavWrapper, null, nav);
+    return React.createElement(NavWrapper, {
+      style: customStyles !== undefined && customStyles.navigationContainer ? _objectSpread({}, customStyles.navigationContainer) : {}
+    }, nav);
   };
 
   var renderArrows = function renderArrows() {
@@ -294,13 +298,16 @@ var TSlider = function TSlider(props) {
     var children = props.children,
         loop = props.loop,
         showNav = props.showNav,
-        arrowsWidth = props.arrowsWidth;
+        arrowsWidth = props.arrowsWidth,
+        customStyles = props.customStyles;
     var lastIndex = state.lastIndex;
     return React.createElement(ArrowsWrapper, {
+      style: customStyles !== undefined && customStyles.arrowsContainer ? _objectSpread({}, customStyles.arrowsContainer) : {},
       arrowsPosition: arrowsPosition,
       arrowsWidth: arrowsWidth,
       showNav: showNav
     }, loop || lastIndex > 0 ? React.createElement(Arrow, {
+      style: customStyles !== undefined && customStyles.leftArrow ? _objectSpread({}, customStyles.leftArrow) : {},
       direction: "left",
       arrowWidth: arrowsWidth,
       onClick: function onClick(event) {
@@ -310,6 +317,7 @@ var TSlider = function TSlider(props) {
       src: leftArrow,
       alt: "left arrow"
     })) : null, loop || lastIndex < children.length - 1 ? React.createElement(Arrow, {
+      style: customStyles !== undefined && customStyles.rightArrow ? _objectSpread({}, customStyles.rightArrow) : {},
       direction: "right",
       arrowWidth: arrowsWidth,
       onClick: function onClick(event) {
@@ -326,14 +334,22 @@ var TSlider = function TSlider(props) {
       leftArrow = props.leftArrow,
       rightArrow = props.rightArrow,
       showNav = props.showNav,
-      arrowsPosition = props.arrowsPosition;
+      arrowsPosition = props.arrowsPosition,
+      customStyles = props.customStyles;
   var index = state.index,
       transition = state.transition;
   var slidesStyles = {
     width: "".concat(100 * children.length, "%"),
     transform: "translateX(".concat(-1 * index * (100 / children.length), "%)")
   };
+  var customSlidesStyles;
+
+  if (customStyles !== undefined && customStyles.slidesContainer) {
+    customSlidesStyles = _objectSpread({}, slidesStyles, customStyles.slidesContainer);
+  }
+
   return React.createElement(Root, {
+    style: customStyles !== undefined && customStyles.mainContainer ? _objectSpread({}, customStyles.mainContainer) : {},
     className: props.className
   }, React.createElement(SliderWrapper, {
     ref: sliderRef
@@ -350,7 +366,7 @@ var TSlider = function TSlider(props) {
   }, React.createElement(Slides, {
     hasTransition: transition,
     index: index,
-    style: slidesStyles
+    style: customSlidesStyles !== undefined ? customSlidesStyles : slidesStyles
   }, children))), showArrows ? renderArrows(leftArrow, rightArrow, arrowsPosition) : null);
 };
 
