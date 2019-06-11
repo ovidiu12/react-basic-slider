@@ -1,21 +1,44 @@
 import React from "react";
 import "./example.css";
 import TSlider from "./lib/index";
-import styled from "styled-components";
 import LeftArrow from "./left-arrow.svg";
 import RightArrow from "./right-arrow.svg";
 
-//styling using styled-components
-const CustomSlider = styled(TSlider)`
-  button {
-    background: #ccc;
-  }
-`;
-
-const Example = () => {
+const CustomStyling = () => {
+  const slidesContainerStyles = {};
+  const mainContainerStyles = {
+    background: "#e9e9e9",
+    borderRadius: "10px",
+    padding: "30px",
+    ">p": {
+      padding: "10px"
+    }
+  };
+  const navigationContainerStyles = {};
+  const navigationButtonsStyles = {
+    background: "#ccc",
+    borderRadius: "1px",
+    margin: "0 5px"
+  };
+  const arrowsContainerStyles = {};
+  const leftArrowStyles = {
+    background: "grey"
+  };
+  const rightArrowStyles = {
+    background: "grey"
+  };
   return (
     <div className="container">
-      <CustomSlider
+      <TSlider
+        customStyles={{
+          mainContainer: mainContainerStyles,
+          slidesContainer: slidesContainerStyles,
+          navigationContainer: navigationContainerStyles,
+          navigationButtons: navigationButtonsStyles,
+          arrowsContainer: arrowsContainerStyles,
+          leftArrow: leftArrowStyles,
+          rightArrow: rightArrowStyles
+        }}
         leftArrow={LeftArrow}
         rightArrow={RightArrow}
         arrowsPosition="bottom"
@@ -60,9 +83,9 @@ const Example = () => {
           possimus illum mollitia eos earum voluptatem non aspernatur?
           Consectetur exercitationem eos vitae?
         </div>
-      </CustomSlider>
+      </TSlider>
     </div>
   );
 };
 
-export default Example;
+export default CustomStyling;

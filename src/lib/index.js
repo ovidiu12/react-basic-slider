@@ -73,7 +73,7 @@ const ArrowsWrapper = styled.div`
     props.arrowsPosition === "bottom" &&
     `
       position: relative;
-      bottom: 15px;
+      bottom: 20px;
     `}
 `;
 
@@ -322,12 +322,19 @@ const TSlider = props => {
   };
 
   const renderNav = () => {
-    const { children } = props;
+    const { children, customStyles } = props;
     const { lastIndex } = state;
 
     const nav = children.map((slide, i) => {
       return (
         <NavButton
+          style={
+            customStyles !== undefined && customStyles.navigationButtons
+              ? {
+                  ...customStyles.navigationButtons
+                }
+              : {}
+          }
           isLastIndex={i === lastIndex}
           key={i}
           onClick={event => goToSlide(i, event)}
@@ -335,7 +342,19 @@ const TSlider = props => {
       );
     });
 
-    return <NavWrapper>{nav}</NavWrapper>;
+    return (
+      <NavWrapper
+        style={
+          customStyles !== undefined && customStyles.navigationContainer
+            ? {
+                ...customStyles.navigationContainer
+              }
+            : {}
+        }
+      >
+        {nav}
+      </NavWrapper>
+    );
   };
 
   const renderArrows = (
@@ -343,17 +362,27 @@ const TSlider = props => {
     rightArrow = null,
     arrowsPosition = "center"
   ) => {
-    const { children, loop, showNav, arrowsWidth } = props;
+    const { children, loop, showNav, arrowsWidth, customStyles } = props;
     const { lastIndex } = state;
 
     return (
       <ArrowsWrapper
+        style={
+          customStyles !== undefined && customStyles.arrowsContainer
+            ? { ...customStyles.arrowsContainer }
+            : {}
+        }
         arrowsPosition={arrowsPosition}
         arrowsWidth={arrowsWidth}
         showNav={showNav}
       >
         {loop || lastIndex > 0 ? (
           <Arrow
+            style={
+              customStyles !== undefined && customStyles.leftArrow
+                ? { ...customStyles.leftArrow }
+                : {}
+            }
             direction="left"
             arrowWidth={arrowsWidth}
             onClick={event => goToSlide(lastIndex - 1, event)}
@@ -363,6 +392,11 @@ const TSlider = props => {
         ) : null}
         {loop || lastIndex < children.length - 1 ? (
           <Arrow
+            style={
+              customStyles !== undefined && customStyles.rightArrow
+                ? { ...customStyles.rightArrow }
+                : {}
+            }
             direction="right"
             arrowWidth={arrowsWidth}
             onClick={event => goToSlide(lastIndex + 1, event)}
@@ -379,9 +413,9 @@ const TSlider = props => {
     leftArrow,
     rightArrow,
     showNav,
-    arrowsPosition
+    arrowsPosition,
+    customStyles
   } = props;
-
   const { index, transition } = state;
 
   const slidesStyles = {
@@ -389,8 +423,23 @@ const TSlider = props => {
     transform: `translateX(${-1 * index * (100 / children.length)}%)`
   };
 
+  let customSlidesStyles;
+
+  if (customStyles !== undefined && customStyles.slidesContainer) {
+    customSlidesStyles = {
+      ...slidesStyles,
+      ...customStyles.slidesContainer
+    };
+  }
   return (
-    <Root className={props.className}>
+    <Root
+      style={
+        customStyles !== undefined && customStyles.mainContainer
+          ? { ...customStyles.mainContainer }
+          : {}
+      }
+      className={props.className}
+    >
       <SliderWrapper ref={sliderRef}>
         {showNav ? renderNav() : null}
 
@@ -399,7 +448,15 @@ const TSlider = props => {
           onTouchMove={event => handleDragMove(event, true)}
           onTouchEnd={() => handleDragEnd(true)}
         >
-          <Slides hasTransition={transition} index={index} style={slidesStyles}>
+          <Slides
+            hasTransition={transition}
+            index={index}
+            style={
+              customSlidesStyles !== undefined
+                ? customSlidesStyles
+                : slidesStyles
+            }
+          >
             {children}
           </Slides>
         </SliderInner>
