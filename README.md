@@ -54,7 +54,9 @@ return(
 
 ### Styling
 
-The styling can be done using styled-components or by passing a custom className and style it directly through css.
+The styling can be done using styled-components, by passing a custom className and style it directly through css or by using the ```customStyles``` prop.
+
+#### Example using styled-components
 
 ```
 import Slider from "react-basic-slider";
@@ -78,6 +80,55 @@ return(
 );
 ```
 
+#### Example using customStyles prop
+```
+import Slider from "react-basic-slider";
+
+...
+
+const slidesContainerStyles = {};
+const mainContainerStyles = {
+  background: "#e9e9e9",
+  borderRadius: "10px",
+  padding: "30px",
+  ">p": {
+    padding: "10px"
+  }
+};
+const navigationContainerStyles = {};
+const navigationButtonsStyles = {
+  background: "#ccc",
+  borderRadius: "1px",
+  margin: "0 5px"
+};
+const arrowsContainerStyles = {};
+const leftArrowStyles = {
+  background: "grey"
+};
+const rightArrowStyles = {
+  background: "grey"
+};
+
+...
+
+return(
+  <CustomSlider 
+    customStyles={{
+      mainContainer: mainContainerStyles,
+      slidesContainer: slidesContainerStyles,
+      navigationContainer: navigationContainerStyles,
+      navigationButtons: navigationButtonsStyles,
+      arrowsContainer: arrowsContainerStyles,
+      leftArrow: leftArrowStyles,
+      rightArrow: rightArrowStyles
+    }}>
+    <div style={{background: 'red'}}>a</div>
+    <div style={{background: 'green'}}>b</div>
+    <div style={{background: 'blue'}}>c</div>
+  </CustomSlider>
+);
+```
+
 ### Props
 
 | property       | type    | default        | purpose                                                                                                           |
@@ -89,6 +140,7 @@ return(
 | leftArrow      | string  | not displaying | Change the default left arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag  |
 | rightArrow     | string  | not displaying | Change the default right arrow to a custom one. Needs to be an URL that goes into the src attribute of an img tag |
 | arrowsPosition | string  | center         | Change the default arrow positioning. Can be center or bottom                                                     |
+| customStyles | object  | not applied         | Change the default styling.                                                     |
 
 ### Note
 
