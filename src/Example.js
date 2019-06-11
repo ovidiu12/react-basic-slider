@@ -6,11 +6,7 @@ import LeftArrow from "./left-arrow.svg";
 import RightArrow from "./right-arrow.svg";
 
 //styling using styled-components
-const CustomSlider = styled(TSlider)`
-  button {
-    background: #ccc;
-  }
-`;
+const CustomSlider = styled(TSlider)``;
 
 const Example = () => {
   return (
