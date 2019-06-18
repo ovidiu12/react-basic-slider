@@ -195,7 +195,8 @@ const sliderReducer = (state, action) => {
       return {
         ...state,
         index: action.payload.index,
-        lastIndex: action.payload.lastIndex
+        lastIndex: action.payload.lastIndex,
+        currentVisibleSlide: action.payload.currentVisibleSlide
       };
     case "handleDragStart":
       return {
@@ -251,7 +252,10 @@ const TSlider = props => {
   useEffect(() => {
     dispatch({
       type: "setInitialState",
-      payload: { index: Number(selected), lastIndex: Number(selected) }
+      payload: {
+        index: Number(selected),
+        lastIndex: Number(selected)
+      }
     });
   }, [selected]);
 
@@ -315,7 +319,7 @@ const TSlider = props => {
   };
 
   const goToSlide = (index, event) => {
-    const { children, loop, onChange } = props;
+    const { children, loop } = props;
     if (event) {
       event.preventDefault();
       event.stopPropagation();
@@ -450,7 +454,6 @@ const TSlider = props => {
         >
           <Slides
             hasTransition={transition}
-            index={index}
             style={
               customSlidesStyles !== undefined
                 ? customSlidesStyles
